@@ -1,16 +1,35 @@
 package nezet;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import modell.Terem;
+
 
 public class TalalosKerdesGUI extends javax.swing.JFrame {
 
-   
+    private int hanyadik;
+    
+    
     public TalalosKerdesGUI() {
         initComponents();
     }
     
-    
+    public void tippek(){
+        Terem terem = new Terem();
+        String s = "";
+        if(terem.getLadak()[hanyadik]==false){
+            aranyButton.setEnabled(false);
+            ezustButton.setEnabled(false);
+            bronzButton.setEnabled(false);
+            s = "<html><span style='color:red'>Biztos egy másik ládában volt a kincs!</span></html>";
+            lblVisszajelzes.setText(s);
+        }else{
+            ezustButton.setIcon(new ImageIcon(getClass().getResource("joEzust.png")));
+            aranyButton.setEnabled(false);
+            bronzButton.setEnabled(false);
+            s = "<html><span style='color:green'>Gratulálok, megtaláltad a kincset!</span></html>";
+            lblVisszajelzes.setText(s);
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -146,7 +165,10 @@ public class TalalosKerdesGUI extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblVisszajelzes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblVisszajelzes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,24 +221,18 @@ public class TalalosKerdesGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aranyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aranyButtonActionPerformed
-        aranyButton.setIcon(new ImageIcon(getClass().getResource("nemArany.png")));
-        ezustButton.setEnabled(false);
-        bronzButton.setEnabled(false);
-        lblVisszajelzes.setText("Biztos egy másik ládában volt a kincs");
+        hanyadik = 0;
+        tippek();
     }//GEN-LAST:event_aranyButtonActionPerformed
 
     private void ezustButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ezustButtonActionPerformed
-        ezustButton.setIcon(new ImageIcon(getClass().getResource("joEzust.png")));
-        aranyButton.setEnabled(false);
-        bronzButton.setEnabled(false);
-        lblVisszajelzes.setText("Gartulálok, megvan a kincs");
+        hanyadik = 1;
+        tippek();
     }//GEN-LAST:event_ezustButtonActionPerformed
 
     private void bronzButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bronzButtonActionPerformed
-        bronzButton.setIcon(new ImageIcon(getClass().getResource("nemBronz.png")));
-        ezustButton.setEnabled(false);
-        aranyButton.setEnabled(false);
-        lblVisszajelzes.setText("Biztos egy másik ládában volt a kincs");
+        hanyadik = 2;
+        tippek();
     }//GEN-LAST:event_bronzButtonActionPerformed
     
     

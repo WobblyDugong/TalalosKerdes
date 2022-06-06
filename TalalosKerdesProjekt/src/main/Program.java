@@ -1,6 +1,5 @@
 package main;
 
-import modell.Terem;
 import nezet.TalalosKerdesGUI;
 
 public class Program {

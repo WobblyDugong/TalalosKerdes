@@ -6,6 +6,7 @@ public class Terem {
     
     public Terem(){
         TeremAlakit();
+        this.ladak = getLadak();
     }
 
     private void TeremAlakit() {
