@@ -138,7 +138,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Mindegyik l&#xe1;d&#xe1;ba grav&#xed;rozva van egy felirat."/>
+            <Property name="text" type="java.lang.String" value="Mindegyik l&#xe1;d&#xe1;ra grav&#xed;rozva van egy felirat."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">

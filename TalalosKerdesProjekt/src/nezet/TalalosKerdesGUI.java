@@ -13,24 +13,27 @@ public class TalalosKerdesGUI extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void tippek(){
+    private void tipp(){
         Terem terem = new Terem();
         String s = "";
         if(terem.getLadak()[hanyadik]==false){
-            aranyButton.setEnabled(false);
+            gombokDisable();
             ezustButton.setEnabled(false);
-            bronzButton.setEnabled(false);
             s = "<html><span style='color:red'>Biztos egy másik ládában volt a kincs!</span></html>";
             lblVisszajelzes.setText(s);
         }else{
             ezustButton.setIcon(new ImageIcon(getClass().getResource("joEzust.png")));
-            aranyButton.setEnabled(false);
-            bronzButton.setEnabled(false);
+            gombokDisable();
             s = "<html><span style='color:green'>Gratulálok, megtaláltad a kincset!</span></html>";
             lblVisszajelzes.setText(s);
         }
     }
-
+        
+    private void gombokDisable(){
+            aranyButton.setEnabled(false);
+            bronzButton.setEnabled(false);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -62,7 +65,7 @@ public class TalalosKerdesGUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Játékmenet"));
 
-        jLabel6.setText("Mindegyik ládába gravírozva van egy felirat.");
+        jLabel6.setText("Mindegyik ládára gravírozva van egy felirat.");
 
         jLabel10.setText("Csak egy állítás igaz a felsoroltak közül.");
 
@@ -222,17 +225,17 @@ public class TalalosKerdesGUI extends javax.swing.JFrame {
 
     private void aranyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aranyButtonActionPerformed
         hanyadik = 0;
-        tippek();
+        tipp();
     }//GEN-LAST:event_aranyButtonActionPerformed
 
     private void ezustButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ezustButtonActionPerformed
         hanyadik = 1;
-        tippek();
+        tipp();
     }//GEN-LAST:event_ezustButtonActionPerformed
 
     private void bronzButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bronzButtonActionPerformed
         hanyadik = 2;
-        tippek();
+        tipp();
     }//GEN-LAST:event_bronzButtonActionPerformed
     
     
