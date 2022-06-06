@@ -28,3 +28,5 @@ Harmadik eset:
 | Állítás | hamis | hamis | igaz |
 
 Ebben az esetben ezüstnél van a kincs és a másik két láda állítása is helytálló.  
+
+Szerintem az ezüst ládában van a kincs.
